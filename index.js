@@ -17,10 +17,15 @@ const btnEl = document.getElementById("add-button");
 
 btnEl.addEventListener('click', () => {
     let inputValue = inputEl.value;
-    push(itemsInCart, inputValue);
+    let lengthOfInput = [...inputValue].length;
     
-    console.log(`${inputValue} added to database`);
-
+    if(lengthOfInput > 2) {
+        push(itemsInCart, inputValue);
+        console.log(`${inputValue} added to database`);
+    }
+    else
+        alert('enter a valid input')
+    
     clearInputField();
 })
 
