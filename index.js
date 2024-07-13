@@ -14,6 +14,15 @@ const itemsInCart = ref(database, 'items')
 let shoppingList = document.getElementById('shopping-list');
 const inputEl = document.getElementById('input-field');
 const btnEl = document.getElementById("add-button");
+const conP = document.getElementById("conditional-p");
+
+inputEl.addEventListener("keyup", function(event) {
+
+    event.preventDefault();
+    if(event.keyCode === 13)
+        btnEl.click();
+    
+});
 
 btnEl.addEventListener('click', () => {
     let inputValue = inputEl.value;
@@ -29,8 +38,11 @@ btnEl.addEventListener('click', () => {
     clearInputField();
 })
 
+
+
 onValue(itemsInCart, function(snapshot) {
     if(snapshot.exists()) {
+
         let itemsArray = Object.entries(snapshot.val());
 
         clearShoppingList();

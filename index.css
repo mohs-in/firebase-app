@@ -70,6 +70,12 @@ ul li:hover {
     cursor: pointer;
 }
 
+#conditional-p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #432000;
+    padding-top: .5em;
+}
+
 @media (min-width:480px) {
     .main {
         max-width: 40%;
